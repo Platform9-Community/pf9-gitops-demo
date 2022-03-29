@@ -8,4 +8,4 @@ namespace: default
 images:
 - name: hello-gitops
   newName: jmv2/hello-gitops
-  newTag: ae9e1d9e9014cdcbfa92e77a50001a21f96de751
+  newTag: 45967894adcfce3a706d370e71ed9600d2b94b08
