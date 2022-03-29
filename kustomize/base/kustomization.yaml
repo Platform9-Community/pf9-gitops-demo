@@ -4,7 +4,7 @@ resources:
 - deployment.yaml
 - service.yaml
 - ingress.yaml
-namespace: hello-gitops
+namespace: default
 images:
 - name: hello-gitops
   newName: jmv2/hello-gitops
