@@ -42,7 +42,10 @@ jobs:
           skip-push: 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGEJSON_DIR:  'cmd'
+      - name: 'Output Step'
+        env:
+          NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
+        run: echo "new version tag $NEW_TAG"
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v1
         with:
