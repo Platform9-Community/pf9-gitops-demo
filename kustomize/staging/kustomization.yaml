@@ -1,6 +1,6 @@
 resources:
 - ../base
-namespace: production
+namespace: staging
 images:
 - name: hello-gitops
   newName: jmv2/hello-gitops
