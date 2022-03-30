@@ -52,7 +52,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
-          cd kustomize/base
+          cd kustomize/dev
           kustomize edit set image hello-gitops=$DOCKER_USERNAME/hello-gitops:${{ steps.version-bump.outputs.newTag }}
           cat kustomization.yaml
       - name: Build and push Docker image

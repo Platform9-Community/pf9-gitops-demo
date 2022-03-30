@@ -1,0 +1,7 @@
+resources:
+- ../base
+namespace: production
+images:
+- name: hello-gitops
+  newName: jmv2/hello-gitops
+  newTag: 0.0.2
