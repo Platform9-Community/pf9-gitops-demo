@@ -22,7 +22,7 @@ func startServer(handler func(http.ResponseWriter, *http.Request)) {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	data, err := ioutil.ReadFile("./version.json")
+	data, err := ioutil.ReadFile("./package.json")
 	if err != nil {
 		fmt.Println("Error ", err.Error())
 	}

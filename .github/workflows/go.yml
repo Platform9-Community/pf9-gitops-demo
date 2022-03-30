@@ -43,9 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Output Step'
-        env:
-          NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
-        run: echo "new version tag $NEW_TAG"
+        run: echo "new version tag ${{ steps.version-bump.outputs.newTag }}"
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v1
         with:
@@ -68,12 +66,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -am "Bump docker tag"
+          git commit -am "Bump to version ${{ steps.version-bump.outputs.newTag }}"
       - name: Tag repo
         uses: rickstaa/action-create-tag@v1
         with:
           tag: ${{ steps.version-bump.outputs.newTag }}
-          message: "new version ${{ steps.version-bump.outputs.newTag }}"
+          message: "CI: bump to new version ${{ steps.version-bump.outputs.newTag }}"
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
