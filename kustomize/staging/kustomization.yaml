@@ -5,4 +5,4 @@ namespace: staging
 images:
 - name: hello-gitops
   newName: jmv2/hello-gitops
-  newTag: 0.0.3
+  newTag: 0.0.6
