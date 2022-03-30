@@ -1,6 +1,6 @@
 package main
 
-// Patch: fixing the problem
+// Patch: repairing the problem
 
 import (
 	"encoding/json"
