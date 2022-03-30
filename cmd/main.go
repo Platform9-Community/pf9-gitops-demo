@@ -40,7 +40,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		host = "unknown host"
 	}
-	resp := fmt.Sprintf("Hello %s from service (version: %s) running on host %s! Go to https://platform9.com/signup/ today to create a free PMK account!!", r.Header.Get("User-Agent"), obj.VERSION, host)
+	resp := fmt.Sprintf("Hello %s from gitops-demo version %s on host %s! Go to https://platform9.com/signup/ today and create your free PMK account!", r.Header.Get("User-Agent"), obj.VERSION, host)
 	_, err = w.Write([]byte(resp))
 	if err != nil {
 		log.Panicf("not able to write http output: %s", err)
