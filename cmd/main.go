@@ -40,7 +40,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		host = "unknown host"
 	}
-	resp := fmt.Sprintf("<html><body><h3>%s<br>version %s on host %s<br></h3></body></html>", r.Header.Get("User-Agent"), obj.VERSION, host)
+	resp := fmt.Sprintf("<html><body><h3>%s<br>version <a href='https://github.com/Platform9-Community/pf9-gitops-demo/releases/tag/%s'>%s</a> on host %s<br></h3><img src='https://platform9.com/wp-content/uploads/2021/11/platform9_open-distributed-cloud-diagram.png'></body></html>", r.Header.Get("User-Agent"), obj.VERSION, obj.VERSION, host)
 	_, err = w.Write([]byte(resp))
 	if err != nil {
 		log.Panicf("not able to write http output: %s", err)
