@@ -1,5 +1,7 @@
 package main
 
+// Patch: fake issue
+
 import (
 	"encoding/json"
 	"fmt"
