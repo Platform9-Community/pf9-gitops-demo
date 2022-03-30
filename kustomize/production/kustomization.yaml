@@ -5,7 +5,7 @@ namespace: production
 images:
 - name: hello-gitops
   newName: jmv2/hello-gitops
-  newTag: 0.0.2
+  newTag: 0.0.6
 replicas:
 - name: hello-gitops
   count: 3
