@@ -11,5 +11,6 @@ A CI/CD pipeline utilizing DevOps best practices with the following features:
 
 ## Additional Examples
 
-Take some time to review other examples, such as utilizing helm for deployments:
+Take some time to review other examples, such as utilizing helm for deployments and incorporate
+the CI/CD best practices above.
 - https://github.com/argoproj/argocd-example-apps
