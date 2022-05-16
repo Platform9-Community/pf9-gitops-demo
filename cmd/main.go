@@ -1,6 +1,6 @@
 package main
 
-// Patch: fix something
+// Patch: fix it
 
 import (
 	"encoding/json"
@@ -20,7 +20,11 @@ func main() {
 func startServer(handler func(http.ResponseWriter, *http.Request)) {
 	http.HandleFunc("/", handler)
 	log.Printf("starting server...")
-	http.ListenAndServe(fmt.Sprintf(":%d", PORT), nil)
+	err := http.ListenAndServe(fmt.Sprintf(":%d", PORT), nil)
+	if err != nil {
+		log.Panicf("not able to start Listener: %s", err)
+	}
+
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
