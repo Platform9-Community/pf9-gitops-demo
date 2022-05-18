@@ -5,6 +5,6 @@ namespace: dev
 images:
 - name: hello-gitops
   newName: jmv2/hello-gitops
-  newTag: 0.0.14
+  newTag: 0.0.15
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
