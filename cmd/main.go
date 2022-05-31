@@ -1,6 +1,6 @@
 package main
 
-// Patch: demo for MST
+// Patch: fix the bug
 
 import (
 	"encoding/json"
