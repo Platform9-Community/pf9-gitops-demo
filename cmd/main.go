@@ -1,6 +1,6 @@
 package main
 
-// Patch: fix the bug
+// Patch: demo for DSG
 
 import (
 	"encoding/json"
