@@ -1,6 +1,6 @@
 package main
 
-// Patch: demo for DSG
+// Patch: trigger webhook
 
 import (
 	"encoding/json"
