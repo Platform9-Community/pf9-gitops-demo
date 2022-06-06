@@ -1,6 +1,6 @@
 package main
 
-// Patch: trigger webhook
+// Patch: trigger argo
 
 import (
 	"encoding/json"
