@@ -1,6 +1,6 @@
 package main
 
-// Patch: demo for Matt
+// Fix for a bug
 
 import (
 	"encoding/json"
