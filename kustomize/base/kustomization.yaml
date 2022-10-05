@@ -5,3 +5,9 @@ resources:
 - service.yaml
 - ingress.yaml
 namespace: default
+
+commonLabels:
+  app: hello-gitops
+
+commonAnnotations:
+  appVersion: 0.0.0
