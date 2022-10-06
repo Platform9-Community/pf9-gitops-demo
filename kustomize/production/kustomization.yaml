@@ -5,10 +5,13 @@ resources:
 - ../base
 namespace: production
 images:
-- name: jmv2/hello-gitops
+- name: hello-gitops
+  newName: jmv2/hello-gitops
   newTag: 0.0.13
+
 commonAnnotations:
   appVersion: 0.0.13
+
 replicas:
 - name: hello-gitops
   count: 3

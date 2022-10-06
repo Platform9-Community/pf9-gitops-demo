@@ -11,8 +11,8 @@ import (
 func Test_handler(t *testing.T) {
 	host, _ := os.Hostname()
 	type args struct {
-		path string
-		status int
+		path     string
+		status   int
 		expected string
 	}
 	tests := []struct {
@@ -32,7 +32,7 @@ func Test_handler(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-			handler := http.HandlerFunc(handler)
+			handler := http.HandlerFunc()
 			handler.ServeHTTP(rr, req)
 			if status := rr.Code; status != tt.args.status {
 				t.Errorf("handler returned wrong status code: got [%v] want [%v]",

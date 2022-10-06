@@ -3,7 +3,9 @@ resources:
 - ../base
 namespace: staging
 images:
-- name: jmv2/hello-gitops
+- name: hello-gitops
+  newname: jmv2/hello-gitops
   newTag: 0.0.20
+
 commonAnnotations:
   appVersion: 0.0.20
