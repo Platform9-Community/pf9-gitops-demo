@@ -7,7 +7,7 @@ namespace: dev
 images:
 - name: hello-gitops
   newName: jmv2/hello-gitops
-  newTag: 0.0.23
+  newTag: 0.0.24
 - name: jmv2/hello-gitops
   newTag: 0.0.21
 commonAnnotations:
