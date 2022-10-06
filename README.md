@@ -8,9 +8,13 @@ A CI/CD pipeline utilizing DevOps best practices with the following features:
 - [Continuous Delivery](https://martinfowler.com/bliki/ContinuousDelivery.html) of new application versions into the Development environment
 - Deterministic control over application version promotion through Staging and Production environments
 - Environment customization of application configuration via [kustomize](https://kustomize.io/)
+- Horizontal POD Autoscaling
 
-## Additional Examples
+# Trigger HPA
 
-Take some time to review other examples, such as utilizing helm for deployments and incorporate
-the CI/CD best practices above.
-- https://github.com/argoproj/argocd-example-apps
+Export your `KUBECONFIG` environment variable to the correct cluster kubeconfig.yaml
+
+```
+make load-test
+```
+
