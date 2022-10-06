@@ -6,6 +6,11 @@ resources:
 - ingress.yaml
 namespace: default
 
+images:
+- name: hello-gitops
+  newName: jmv2/hello-gitops
+  newTag: 0.0.0
+
 commonLabels:
   app: hello-gitops
 

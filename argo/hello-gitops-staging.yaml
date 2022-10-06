@@ -1,0 +1,25 @@
+metadata:
+  name: hello-gitops-staging
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: staging
+    server: https://cs-jmiller-ddu.platform9.net/qbert/v2/932b0f07583842a197464d602fffd7ce/clusters/03e3ae46-1fd8-410a-b522-98bc31ccebe2/k8sapi
+  project: default
+  source:
+    path: kustomize/staging
+    repoURL: https://github.com/Platform9-Community/pf9-gitops-demo.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 2
+    syncOptions:
+    - CreateNamespace=true
