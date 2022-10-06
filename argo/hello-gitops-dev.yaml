@@ -11,6 +11,11 @@ spec:
     path: kustomize/dev
     repoURL: https://github.com/Platform9-Community/pf9-gitops-demo.git
     targetRevision: HEAD
+  ignoreDifferences:
+  - group: "apps"
+    kind: "Deployment"
+    jsonPointers:
+    - /spec/replicas
   syncPolicy:
     automated:
       prune: true
@@ -23,3 +28,4 @@ spec:
       limit: 2
     syncOptions:
     - CreateNamespace=true
+    - RespectIgnoreDifferences=true
