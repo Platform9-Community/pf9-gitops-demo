@@ -1,7 +1,5 @@
 package main
 
-// add fix
-
 import (
 	"encoding/json"
 	"fmt"
