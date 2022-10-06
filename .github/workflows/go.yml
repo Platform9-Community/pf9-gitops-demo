@@ -47,7 +47,7 @@ jobs:
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v1
         with:
-          kustomize-version: "3.6.1"
+          kustomize-version: "4.5.7"
       - name: Update Kubernetes Resources
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
