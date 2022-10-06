@@ -82,7 +82,7 @@ jobs:
         uses: clowdhaus/argo-cd-action/@main
         with:
           version: 2.4.11
-          command: patch hello-gitops-dev
+          command: app patch hello-gitops-dev
           options: >
             --patch '{"metadata": { "labels": { "appVersion": "${{ steps.version-bump.outputs.newTag }}" }}}'
             --type merge
