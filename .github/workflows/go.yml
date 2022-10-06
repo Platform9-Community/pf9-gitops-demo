@@ -89,3 +89,18 @@ jobs:
             --server cs-jmiller-ddu.platform9.net
             --grpc-web-root-path argocd
             --auth-token ${{ secrets.ARGOCD_TOKEN }}
+      - name: Retrieve Staging version
+        run: |
+          echo "::set-output name=TAG_NAME::$(awk '/newTag/{print $2}' kustomize/staging/kustomization.yaml)"
+        id: staging_tag
+      - name: Set Argo Staging Version
+        uses: clowdhaus/argo-cd-action/@main
+        with:
+          version: 2.4.11
+          command: app patch hello-gitops-staging
+          options: >
+            --patch '{"metadata": { "labels": { "appVersion": "${{ steps.staging_tag.outputs.TAG_NAME }}" }}}'
+            --type merge
+            --server cs-jmiller-ddu.platform9.net
+            --grpc-web-root-path argocd
+            --auth-token ${{ secrets.ARGOCD_TOKEN }}
