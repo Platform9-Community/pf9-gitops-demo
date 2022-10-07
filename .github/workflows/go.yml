@@ -81,6 +81,7 @@ jobs:
 
   set_argo_app_labels:
     needs: bump_build_push
+    if: always()
     name: Set ArgoCD Application Labels
     runs-on: ubuntu-latest
     steps:
