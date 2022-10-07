@@ -57,6 +57,7 @@ func main() {
 		_, err = w.Write([]byte(resp))
 		log.Printf("Service (version: %s): received request from %s", obj.VERSION, r.Header.Get("User-Agent"))
 	})
+	mux.Handle("/metrics", promhttp.Handler())
 
 	// Wrap our main handler, we pass empty handler ID so the middleware infers
 	// the handler label from the URL.
@@ -71,12 +72,14 @@ func main() {
 	}()
 
 	// Serve our metrics.
-	go func() {
-		log.Printf("metrics listening at %s", metricsAddr)
-		if err := http.ListenAndServe(metricsAddr, promhttp.Handler()); err != nil {
-			log.Panicf("error while serving metrics: %s", err)
-		}
-	}()
+	/*
+		go func() {
+			log.Printf("metrics listening at %s", metricsAddr)
+			if err := http.ListenAndServe(metricsAddr, promhttp.Handler()); err != nil {
+				log.Panicf("error while serving metrics: %s", err)
+			}
+		}()
+	*/
 
 	// Wait until some signal is captured.
 	sigC := make(chan os.Signal, 1)

@@ -101,8 +101,7 @@ jobs:
           options: >
             --patch '{"metadata": { "labels": { "appVersion": "${{ steps.dev_tag.outputs.TAG_NAME }}" }}}'
             --type merge
-            --server cs-jmiller-ddu.platform9.net
-            --grpc-web-root-path argocd
+            --server a8b22bdfad01640ee85f14dd68261e9f-201506978.us-east-1.elb.amazonaws.com
             --auth-token ${{ secrets.ARGOCD_TOKEN }}
       - name: Retrieve Staging version
         run: |
@@ -116,6 +115,5 @@ jobs:
           options: >
             --patch '{"metadata": { "labels": { "appVersion": "${{ steps.staging_tag.outputs.TAG_NAME }}" }}}'
             --type merge
-            --server cs-jmiller-ddu.platform9.net
-            --grpc-web-root-path argocd
+            --server a8b22bdfad01640ee85f14dd68261e9f-201506978.us-east-1.elb.amazonaws.com
             --auth-token ${{ secrets.ARGOCD_TOKEN }}
