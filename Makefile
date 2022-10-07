@@ -17,7 +17,7 @@ load-test:
 		-i --tty --rm --restart=Never \
 		load-generator \
 		--image=busybox:stable \
-		--namespace dev \
+		--namespace staging \
 		--context $(KUBE_CONTEXT) \
 		--kubeconfig $(KUBECONFIG) \
 		-- /bin/sh -c "while true; do wget -q -O/dev/null http://hello-gitops; done"
