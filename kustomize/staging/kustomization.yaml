@@ -5,7 +5,7 @@ namespace: staging
 images:
 - name: jmv2/hello-gitops
   newname: jmv2/hello-gitops
-  newTag: 0.0.33
+  newTag: 0.0.34
 
 commonAnnotations:
-  appVersion: 0.0.33
+  appVersion: 0.0.34
