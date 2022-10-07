@@ -8,9 +8,6 @@ images:
 - name: hello-gitops
   newName: jmv2/hello-gitops
   newTag: 0.0.30
-- name: jmv2/hello-gitops
-  newName: jmv2/hello-gitops
-  newTag: 0.0.28
 
 commonAnnotations:
   appVersion: 0.0.30
