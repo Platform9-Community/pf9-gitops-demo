@@ -1,7 +1,5 @@
 package main
 
-// add fix
-
 import (
 	"encoding/json"
 	"fmt"
@@ -20,8 +18,7 @@ import (
 )
 
 const (
-	srvAddr     = ":8080"
-	metricsAddr = ":8081"
+	srvAddr = ":8080"
 )
 
 func main() {
@@ -72,16 +69,6 @@ func main() {
 			log.Panicf("error while serving: %s", err)
 		}
 	}()
-
-	// Serve our metrics.
-	/*
-		go func() {
-			log.Printf("metrics listening at %s", metricsAddr)
-			if err := http.ListenAndServe(metricsAddr, promhttp.Handler()); err != nil {
-				log.Panicf("error while serving metrics: %s", err)
-			}
-		}()
-	*/
 
 	// Wait until some signal is captured.
 	sigC := make(chan os.Signal, 1)
