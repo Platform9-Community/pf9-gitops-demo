@@ -121,3 +121,19 @@ jobs:
             --server sa-jeremy.platform9.net
             --insecure
             --auth-token ${{ secrets.ARGOCD_TOKEN }}
+      - name: Retrieve Production version
+        run: |
+          echo "::set-output name=TAG_NAME::$(awk '/newTag/{print $2}' kustomize/production/kustomization.yaml)"
+        id: production_tag
+      - name: Set Argo Production Version
+        uses: clowdhaus/argo-cd-action/@main
+        with:
+          version: 2.4.11
+          command: app patch hello-gitops-production
+          options: >
+            --patch '{"metadata": { "labels": { "appVersion": "${{ steps.production_tag.outputs.TAG_NAME }}" }}}'
+            --grpc-web-root-path argocd
+            --type merge
+            --server sa-jeremy.platform9.net
+            --insecure
+            --auth-token ${{ secrets.ARGOCD_TOKEN }}
