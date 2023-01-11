@@ -9,5 +9,7 @@ images:
   newName: jmv2/hello-gitops
   newTag: 0.0.37
 
-commonLabels:
-  appVersion: 0.0.37
+labels:
+- pairs:
+    appVersion: 0.0.37
+  includeTemplates: true

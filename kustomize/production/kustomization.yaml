@@ -9,8 +9,10 @@ images:
   newName: jmv2/hello-gitops
   newTag: 0.0.13
 
-commonLabels:
-  appVersion: 0.0.13
+labels:
+- pairs:
+    appVersion: 0.0.13
+  includeTemplates: true
 
 replicas:
 - name: hello-gitops
