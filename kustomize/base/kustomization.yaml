@@ -11,8 +11,3 @@ images:
 - name: jmv2/hello-gitops
   newName: jmv2/hello-gitops
   newTag: 0.0.0
-
-labels:
-- pairs:
-    appVersion: 0.0.0
-  # includeTemplates: true
