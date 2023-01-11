@@ -10,5 +10,4 @@ images:
   newTag: 0.0.37
 
 commonLabels:
-  '{appVersion': 0.0.37
-  appVersion: 0.0.36
+  appVersion: 0.0.37
