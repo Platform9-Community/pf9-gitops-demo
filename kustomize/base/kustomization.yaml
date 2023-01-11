@@ -15,4 +15,4 @@ images:
 labels:
 - pairs:
     appVersion: 0.0.0
-  includeTemplates: true
+  # includeTemplates: true

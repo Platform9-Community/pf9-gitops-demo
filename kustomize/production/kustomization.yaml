@@ -12,7 +12,7 @@ images:
 labels:
 - pairs:
     appVersion: 0.0.13
-  includeTemplates: true
+  # includeTemplates: true
 
 replicas:
 - name: hello-gitops

@@ -10,6 +10,6 @@ images:
   newTag: 0.0.38
 
 labels:
-- includeTemplates: true
-  pairs:
+- pairs:
     appVersion: 0.0.37
+  # includeTemplates: true
