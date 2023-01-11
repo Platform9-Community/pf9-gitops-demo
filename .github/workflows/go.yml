@@ -100,6 +100,7 @@ jobs:
           command: app patch hello-gitops-dev
           options: >
             --patch '{"metadata": { "labels": { "appVersion": "${{ steps.dev_tag.outputs.TAG_NAME }}" }}}'
+            --grpc-web-root-path argocd
             --type merge
             --server sa-jeremy.platform9.net
             --insecure
@@ -115,6 +116,7 @@ jobs:
           command: app patch hello-gitops-staging
           options: >
             --patch '{"metadata": { "labels": { "appVersion": "${{ steps.staging_tag.outputs.TAG_NAME }}" }}}'
+            --grpc-web-root-path argocd
             --type merge
             --server sa-jeremy.platform9.net
             --insecure
