@@ -54,7 +54,7 @@ jobs:
         run: |
           cd kustomize/dev
           kustomize edit set image jmv2/hello-gitops=$DOCKER_USERNAME/hello-gitops:${{ steps.version-bump.outputs.newTag }}
-          kustomize edit add label appVersion:${{ steps.version-bump.outputs.newTag } --force
+          kustomize edit add label appVersion:${{ steps.version-bump.outputs.newTag }} --force
           cat kustomization.yaml
       - name: Build and push Docker image
         uses: docker/build-push-action@v1.1.0
