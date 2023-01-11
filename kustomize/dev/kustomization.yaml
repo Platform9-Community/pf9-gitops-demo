@@ -10,6 +10,4 @@ images:
   newTag: 0.0.35
 
 commonLabels:
-  appVersion: 0.0.34
-commonAnnotations:
   appVersion: 0.0.35
