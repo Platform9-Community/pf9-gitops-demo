@@ -5,7 +5,7 @@ metadata:
 spec:
   destination:
     namespace: staging
-    server: https://app-cluster-apiserver-1350953172.us-east-1.elb.amazonaws.com:6443
+    server: https://sa-jeremy.platform9.net/qbert/v2/394d545fd3f64f8cbb64c18916f81815/clusters/2634bffc-1128-4621-80db-4c4ee678d9a6/k8sapi
   project: default
   source:
     path: kustomize/staging

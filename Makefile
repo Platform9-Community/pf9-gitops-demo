@@ -16,9 +16,10 @@ load-test:
 	kubectl run \
 		-i --tty --rm --restart=Never \
 		load-generator \
-		--image=busybox:stable \
+		--image=weaveworks/flagger-loadtester:0.18.0 \
 		--namespace staging \
 		--context $(KUBE_CONTEXT) \
 		--kubeconfig $(KUBECONFIG) \
-		-- /bin/sh -c "while true; do wget -q -O/dev/null http://hello-gitops; done"
+		--command \
+		-- /bin/sh -c "hey -z 1m -m GET -q 10 http://hello-gitops/"
 

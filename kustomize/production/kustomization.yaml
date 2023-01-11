@@ -9,7 +9,7 @@ images:
   newName: jmv2/hello-gitops
   newTag: 0.0.13
 
-commonAnnotations:
+commonLabels:
   appVersion: 0.0.13
 
 replicas:
