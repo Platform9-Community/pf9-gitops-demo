@@ -7,9 +7,9 @@ namespace: dev
 images:
 - name: jmv2/hello-gitops
   newName: jmv2/hello-gitops
-  newTag: 0.0.37
+  newTag: 0.0.38
 
 labels:
-- pairs:
+- includeTemplates: true
+  pairs:
     appVersion: 0.0.37
-  includeTemplates: true
