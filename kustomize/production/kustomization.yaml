@@ -7,7 +7,7 @@ namespace: production
 images:
 - name: jmv2/hello-gitops
   newName: jmv2/hello-gitops
-  newTag: 0.0.39
+  newTag: 0.0.40
 
 patchesStrategicMerge:
 - hpa.yaml
