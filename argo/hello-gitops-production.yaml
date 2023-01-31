@@ -1,0 +1,31 @@
+metadata:
+  name: hello-gitops-production
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: production
+    server: https://sa-jeremy.platform9.net/qbert/v2/394d545fd3f64f8cbb64c18916f81815/clusters/2634bffc-1128-4621-80db-4c4ee678d9a6/k8sapi
+  project: default
+  source:
+    path: kustomize/production
+    repoURL: https://github.com/Platform9-Community/pf9-gitops-demo.git
+    targetRevision: HEAD
+  ignoreDifferences:
+  - group: "apps"
+    kind: "Deployment"
+    jsonPointers:
+    - /spec/replicas
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 2
+    syncOptions:
+    - CreateNamespace=true
+    - RespectIgnoreDifferences=true
